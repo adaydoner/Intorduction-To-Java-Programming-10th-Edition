@@ -1,6 +1,8 @@
+//	(Display three messages) Write a program that displays Welcome to Java,Welcome to Computer Science, and Programming is fun.
+
 package chapter01;
 
-public class ProgrammingExerciseQ01 {
+public class ProgrammingExercise01 {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Java");
