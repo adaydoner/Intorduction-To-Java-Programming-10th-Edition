@@ -10,25 +10,25 @@ package chapter02;
 import java.util.Scanner;
 
 public class ProgrammingExercise01 {
-	public static double CelsiusToFahrenheit(double celsiusDegree) {
+	public static void CelsiusToFahrenheit(double celsiusDegree) {
 		double fahrenheitDegree;
-		fahrenheitDegree = (9.0/5) * celsiusDegree + 32;
-		return fahrenheitDegree;
+		fahrenheitDegree = (9.0 / 5) * celsiusDegree + 32;
+		// System.out.println(celsius + " celsius degree equal to " + fahrenheit + "
+		// Fahrenheit.");
+		System.out.printf("%.1f celsius = %.1f Fahrenheit", celsiusDegree, fahrenheitDegree);
+
 	}
 
 	public static void main(String[] args) {
-		double celsius ;
-		double fahrenheit;
+		double celsius;
 		Scanner readNumber = new Scanner(System.in);
-		
-		System.out.print("Celsius Degree : "); // 43(.)9 invalid  --- 43(,)9 valid
+		System.out.print("Celsius Degree : "); // 43(.)9 invalid --- 43(,)9 valid
 		celsius = readNumber.nextDouble();
-		fahrenheit = CelsiusToFahrenheit(celsius);
-		
-		//System.out.println(celsius + " celsius degree equal to " + fahrenheit + " Fahrenheit.");
-		System.out.printf("%.1f celsius = %.1f Fahrenheit",celsius,fahrenheit);
-		
-		if(readNumber!=null) {readNumber.close();}
+		CelsiusToFahrenheit(celsius);
+
+		if (readNumber != null) {
+			readNumber.close();
+		}
 	}
 
 }
