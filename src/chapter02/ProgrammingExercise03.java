@@ -11,23 +11,23 @@ import java.util.Scanner;
 
 public class ProgrammingExercise03 {
 
-	public static double FeetIntoMeters (double givenFeet) {
+	public static void feetIntoMeters(double feet) {
 		double meters;
-		meters = givenFeet * 0.305;
-		return meters;
+		meters = feet * 0.305;
+		System.out.printf("%.2f feet is %.4f meters.", feet, meters);
 	}
+
 	public static void main(String[] args) {
 		double feet;
-		double meters;
 		Scanner readNumber = new Scanner(System.in);
-
 		System.out.printf("Enter a value for feet : ");
 		feet = readNumber.nextDouble();
-		meters = FeetIntoMeters(feet);
-		System.out.printf("%.2f feet is %.4f meters.",feet,meters);
-		
-		if(readNumber!=null) {readNumber.close();}
-		
+		feetIntoMeters(feet);
+
+		if (readNumber != null) {
+			readNumber.close();
+		}
+
 	}
 
 }
