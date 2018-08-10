@@ -22,7 +22,7 @@ public class ProgrammingExercise01 {
 	public static void main(String[] args) {
 		double celsius;
 		Scanner readNumber = new Scanner(System.in);
-		System.out.print("Celsius Degree : "); // 43(.)9 invalid --- 43(,)9 valid
+		System.out.print("Celsius Degree : ");
 		celsius = readNumber.nextDouble();
 		CelsiusToFahrenheit(celsius);
 
