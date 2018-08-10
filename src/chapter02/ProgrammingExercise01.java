@@ -10,12 +10,21 @@ package chapter02;
 import java.util.Scanner;
 
 public class ProgrammingExercise01 {
+	public static double CelsiusToFahrenheit(double celsiusDegree) {
+		double fahrenheitDegree;
+		fahrenheitDegree = (9.0/5) * celsiusDegree + 32;
+		return fahrenheitDegree;
+	}
 
 	public static void main(String[] args) {
+		double celsius ;
+		double fahrenheit;
 		Scanner readNumber = new Scanner(System.in);
+		
 		System.out.print("Celsius Degree : "); // 43(.)9 invalid  --- 43(,)9 valid
-		double celsius = readNumber.nextDouble();
-		double fahrenheit = (9.0/5) * celsius + 32;
+		celsius = readNumber.nextDouble();
+		fahrenheit = CelsiusToFahrenheit(celsius);
+		
 		//System.out.println(celsius + " celsius degree equal to " + fahrenheit + " Fahrenheit.");
 		System.out.printf("%.1f celsius = %.1f Fahrenheit",celsius,fahrenheit);
 		
