@@ -10,11 +10,10 @@ package chapter02;
 import java.util.Scanner;
 
 public class ProgrammingExercise01 {
+	
 	public static void celsiusIntoFahrenheit(double celsiusDegree) {
 		double fahrenheitDegree;
 		fahrenheitDegree = (9.0 / 5) * celsiusDegree + 32;
-		// System.out.println(celsius + " celsius degree equal to " + fahrenheit + "
-		// Fahrenheit.");
 		System.out.printf("%.1f celsius = %.1f Fahrenheit", celsiusDegree, fahrenheitDegree);
 
 	}
