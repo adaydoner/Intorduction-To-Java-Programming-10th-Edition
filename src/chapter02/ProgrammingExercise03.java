@@ -9,7 +9,7 @@ package chapter02;
 
 import java.util.Scanner;
 
-public class ProgramminExercise03 {
+public class ProgrammingExercise03 {
 
 	public static double FeetIntoMeters (double givenFeet) {
 		double meters;
