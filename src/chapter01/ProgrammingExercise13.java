@@ -37,13 +37,13 @@ public class ProgrammingExercise13 {
 		// Convert String to double
 		Double y1 = Double.parseDouble(arrayY1[0]);
 		Double y2 = Double.parseDouble(arrayY2[0]);
-		System.out.println("x1 : " + x1 +"\n"+"x2 : " + x2 + "\n"+"y1 : " + y1 + "\n"+"y2 : " + y2 + "\n"+"z1 : " + z1 +"\n"+"z2 : " + z2);
+		System.out.println("x1 : " + x1 + "\n"+"x2 : " + x2 + "\n"+"y1 : " + y1 + "\n"+"y2 : " + y2 + "\n"+"z1 : " + z1 +"\n"+"z2 : " + z2);
 		
 		//Cramer's rules to solve 2x2 sytems
 		Double xResult = ((z1 * y2) - (y1 * z2)) / ((x1 * y2) - (y1 * x2));
-		System.out.println("x : "+ xResult);
+		System.out.printf("x : %2.2f \n", xResult);
 		Double yResult = ((x1 * z2) - (z1 * x2)) / ((x1 * y2) - (y1 * x2));
-		System.out.println("y : "+ yResult);
+		System.out.printf("y : %2.2f", yResult);
 	}
 
 }
