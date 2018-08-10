@@ -10,7 +10,7 @@ package chapter02;
 import java.util.Scanner;
 
 public class ProgrammingExercise01 {
-	public static void CelsiusToFahrenheit(double celsiusDegree) {
+	public static void celsiusIntoFahrenheit(double celsiusDegree) {
 		double fahrenheitDegree;
 		fahrenheitDegree = (9.0 / 5) * celsiusDegree + 32;
 		// System.out.println(celsius + " celsius degree equal to " + fahrenheit + "
@@ -24,7 +24,7 @@ public class ProgrammingExercise01 {
 		Scanner readNumber = new Scanner(System.in);
 		System.out.print("Celsius Degree : ");
 		celsius = readNumber.nextDouble();
-		CelsiusToFahrenheit(celsius);
+		celsiusIntoFahrenheit(celsius);
 
 		if (readNumber != null) {
 			readNumber.close();
