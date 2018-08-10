@@ -10,34 +10,32 @@ import java.util.Scanner;
 
 public class ProgrammingExercise02 {
 
-	private static double areaOfCylinder(double radius) {
+	private static void areaOfCylinder(double radius) {
 		double area;
 		area = radius * radius * Math.PI;
-		return area;
+		System.out.printf("Area of Cylinder : %.2f \n", area);
 	}
 
-	private static double volumeOfCylinder(double area, double length) {
+	private static void volumeOfCylinder(double radius, double length) {
 		double volume;
-		volume = area * length;
-		return volume;
+		volume = radius * radius * Math.PI * length;
+		System.out.printf("Volume of Cylinder : %.2f \n", volume);
 	}
 
 	public static void main(String[] args) {
 		double radius;
 		double length;
-		double area;
-		double volume;
 		Scanner readNumber = new Scanner(System.in);
 		System.out.print("Enter the radius and length of a cylinder : ");
 		radius = readNumber.nextDouble();
 		length = readNumber.nextDouble();
 
-		area = areaOfCylinder(radius);
-		System.out.printf("Area of Cylinder : %.2f \n", area);
-		volume = volumeOfCylinder(area, length);
-		System.out.printf("Volume of Cylinder : %.2f \n", volume);
-		
-		if(readNumber != null) {readNumber.close();}
-		}
+		areaOfCylinder(radius);
+		volumeOfCylinder(radius, length);
 
+		if (readNumber != null) {
+			readNumber.close();
+		}
 	}
+
+}
