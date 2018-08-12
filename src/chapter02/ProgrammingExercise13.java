@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class ProgrammingExercise13 {
 	public static double DisplayAccount(int amount, double annualRate, int months) {
 		double account = 0;
-		double monthlyRate = (annualRate / 100 ) / 12.0;
+		double monthlyRate = annualRate / 12.0;
 		for (int i = 1; i <= months; i++) {
 			account = (amount + account) * (1 + monthlyRate);
 		}
@@ -36,20 +36,20 @@ public class ProgrammingExercise13 {
 		double annualInterestRate;
 		int howManyMonths;
 		double finalAccount;
-		double monthlyEarning;
+		double monthlyInterest;
 		Scanner readNumber = new Scanner(System.in);
 		System.out.print("Enter the monthly saving amount : ");
 		monthlySavingAmount = readNumber.nextInt();
 		System.out.print("Enter annual interest rate : ");
-		annualInterestRate = readNumber.nextDouble();
+		annualInterestRate = readNumber.nextDouble() / 100;
 		System.out.print("How many months later you want to see how much money you will have : ");
 		howManyMonths = readNumber.nextInt();
 		
 		finalAccount = DisplayAccount(monthlySavingAmount, annualInterestRate, howManyMonths);
 		
 		System.out.printf("\nAfter the %d month, the account value is $%.2f \n\n",howManyMonths,finalAccount);
-		monthlyEarning = MonthlyAverageEarnings(finalAccount, monthlySavingAmount, howManyMonths);
-		System.out.printf("Your monthly earning is $%.2f ",monthlyEarning);		
+		monthlyInterest = MonthlyAverageEarnings(finalAccount, monthlySavingAmount, howManyMonths);
+		System.out.printf("Your monthly interest is $%.2f ",monthlyInterest);		
 		if (readNumber != null) {
 			readNumber.close();
 		}
