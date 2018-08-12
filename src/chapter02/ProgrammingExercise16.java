@@ -9,7 +9,7 @@ public class ProgrammingExercise16 {
 
 	private static double CalculateAreaOfHexagon(double sideLength) {
 		double area;
-		area = (Math.pow(27, 0.5) / 2) * Math.pow(sideLength, 2);
+		area = 3 * 1.732 * sideLength * sideLength / 2;
 		return area;
 	}
 
