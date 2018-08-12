@@ -24,10 +24,16 @@ public class ProgrammingExercise17 {
 		double windSpeed;
 		double windChillIndex;
 		Scanner readNumber = new Scanner(System.in);
+		do {
 		System.out.print("Enter the temperature in Fahrenheit between -58°F and 41°F : ");
 		outsideTemperature = readNumber.nextDouble();
+		}while(outsideTemperature > 41 || outsideTemperature < -58);
+		
+		do {
 		System.out.print("Enter the wind speed (>=2) in miles per hour : ");
 		windSpeed = readNumber.nextDouble();
+		}while(windSpeed < 2);
+		
 		windChillIndex = CalculateWindChillTemperature(outsideTemperature,windSpeed);
 		System.out.println("The wind chill index is " + windChillIndex);
 		
