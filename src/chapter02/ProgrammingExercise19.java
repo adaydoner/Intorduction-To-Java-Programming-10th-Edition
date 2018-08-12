@@ -42,6 +42,10 @@ public class ProgrammingExercise19 {
 		y3 = readNumber.nextDouble();
 		area = AreaOfTriangle(x1,y1,x2,y2,x3,y3);
 		System.out.println("The area of the triangle is "+ area);
+		
+		if(readNumber != null) {
+			readNumber.close();
+		}
 	}
 
 }
