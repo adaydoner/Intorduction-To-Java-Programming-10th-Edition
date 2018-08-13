@@ -1,5 +1,5 @@
 /*
- * The two roots of a quadratic equation can be obtained using formula
+ * The two roots of a quadratic equation can be obtained using formula.
  * b2 - 4ac is called the discriminant of the quadratic equation. If it is positive, the
  * equation has two real roots. If it is zero, the equation has one root. If it is negative,
  * the equation has no real roots.
