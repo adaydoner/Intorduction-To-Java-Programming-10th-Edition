@@ -12,8 +12,8 @@ public class ProgrammingExercise13 {
 
 	public static void main(String[] args) {
 		//program will compute every linear and give back x and y values only in this format , you are free to change only NUMBERS.
-		String firstLinearEquations = "3.4x + 50.2y = 44.5";
-		String secondLinearEquations = "2.1x + .55y = 5.9";
+		String firstLinearEquations = "3.0x + 2.0y = 2.0";
+		String secondLinearEquations = "4.0x + 4.0y = 5.0";
 		// Collect X values
 		String[] arrayX1 = firstLinearEquations.split("x"); // Linear's X values which is 3.4 is now in arrayX1[0] . Rest of linear is in arrayX1[1]
 		String[] arrayX2 = secondLinearEquations.split("x");
@@ -40,10 +40,15 @@ public class ProgrammingExercise13 {
 		System.out.println("x1 : " + x1 + "\n"+"x2 : " + x2 + "\n"+"y1 : " + y1 + "\n"+"y2 : " + y2 + "\n"+"z1 : " + z1 +"\n"+"z2 : " + z2);
 		
 		//Cramer's rules to solve 2x2 sytems
+		if((x1 * x2 - y1 * z1) == 0) {
+			System.out.println("The equation has no solution");
+		}
+		else {
 		Double xResult = ((z1 * y2) - (y1 * z2)) / ((x1 * y2) - (y1 * x2));
 		System.out.printf("x : %2.2f \n", xResult);
 		Double yResult = ((x1 * z2) - (z1 * x2)) / ((x1 * y2) - (y1 * x2));
 		System.out.printf("y : %2.2f", yResult);
+		}
 	}
 
 }
