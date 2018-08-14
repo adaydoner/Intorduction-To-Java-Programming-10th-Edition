@@ -44,6 +44,6 @@ public class ProgrammingExercise06 {
 		else {
 			System.out.println("Obese");
 		}
+		readNumber.close();
 	}
-
 }
