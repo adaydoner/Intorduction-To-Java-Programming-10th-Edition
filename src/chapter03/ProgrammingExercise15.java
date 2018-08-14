@@ -64,6 +64,7 @@ public class ProgrammingExercise15 {
 			System.out.println("Lottery number was " + lotteryNumbersDigits[0] + lotteryNumbersDigits[1] + lotteryNumbersDigits[2]);
 			System.out.println("You couldnt win any price. Try Again !");
 		}
+		readNumber.close();
 	}
 }
 
