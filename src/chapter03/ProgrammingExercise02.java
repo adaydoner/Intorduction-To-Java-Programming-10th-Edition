@@ -28,7 +28,6 @@ public class ProgrammingExercise02 {
 			System.out.print("WRONG ! ");
 			System.out.println("Answer is : " + (number1 + number2 + number3));
 		}
-
+		readNumber.close();
 	}
-
 }
