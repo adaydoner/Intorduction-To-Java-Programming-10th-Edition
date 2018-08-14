@@ -40,5 +40,6 @@ public class ProgrammingExercise11 {
 		year = readNumber.nextInt();
 		daysOfEnteredDate = HowManyDays(month, year);
 		System.out.println(month + "/" + year + " has " + daysOfEnteredDate + " days.");
+		readNumber.close();
 	}
 }
