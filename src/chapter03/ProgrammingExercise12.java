@@ -27,7 +27,6 @@ public class ProgrammingExercise12 {
 		else {
 			System.out.println(usersNumber + " is not a palindrome.");
 		}
-				
+		readNumber.close();
 	}
-
 }
