@@ -6,8 +6,8 @@
  * 
  * Write a program that prompts the user to enter values for a, b, and c and displays
  * the result based on the discriminant. If the discriminant is positive, display two
- * roots. If the discriminant is 0, display one root. Otherwise, display “The equation
- * has no real roots”.
+ * roots. If the discriminant is 0, display one root. Otherwise, display ï¿½The equation
+ * has no real rootsï¿½.
  */
 package chapter03;
 
@@ -49,5 +49,6 @@ public class ProgrammingExercise01 {
 		} else {
 			System.out.println("The equation  has no roots.");
 		}
+		readNumber.close();
 	}
 }
