@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class ProgrammingExercise13 {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+		Scanner readNumber = new Scanner(System.in);
 
 		System.out.print("0.) Single filer\n1.) Married jointly or qualifying widow(er)\n2.) Married separately\n3.) Head of household\n" + "Enter the filing status: ");
-		int status = input.nextInt();
+		int status = readNumber.nextInt();
 
 		System.out.print("Enter the taxable income: ");
-		double income = input.nextDouble();
+		double income = readNumber.nextDouble();
 
 		double tax = 0;
 
@@ -104,9 +104,7 @@ public class ProgrammingExercise13 {
 			System.out.println("Error: invalid status");
 			System.exit(1);
 		}
-
-		// Display the result
 		System.out.println("Tax is " + (int) (tax * 100) / 100.0);
+		readNumber.close();
 	}
-
 }
