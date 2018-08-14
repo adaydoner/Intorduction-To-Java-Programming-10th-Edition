@@ -1,6 +1,6 @@
 /*
  * (Find future dates) Write a program that prompts the user to enter an integer for
- * today’s day of the week (Sunday is 0, Monday is 1, …, and Saturday is 6). Also
+ * todayï¿½s day of the week (Sunday is 0, Monday is 1, ï¿½, and Saturday is 6). Also
  * prompt the user to enter the number of days after today for a future day and display
  * the future day of the week.
  */
@@ -21,6 +21,7 @@ public class ProgrammingExercise05 {
 		System.out.print("Enter the number of days elapsed since today : ");
 		elapsedDay = readNumber.nextInt();
 		System.out.println("Today is " + daysOfWeek[todaysDay] + " and the future day is " + daysOfWeek[(todaysDay + elapsedDay) % 7] );
+		readNumber.close();
 	}
 
 }
