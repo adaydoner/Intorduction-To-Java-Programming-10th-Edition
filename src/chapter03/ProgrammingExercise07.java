@@ -42,9 +42,9 @@ public class ProgrammingExercise07 {
 	public static void main(String[] args) {
 		double amount;
 		Scanner readNumber = new Scanner(System.in);
-		System.out.println("Enter an amount for example 11,56 : ");
+		System.out.print("Enter an amount for example 11,56 : ");
 		amount = readNumber.nextDouble();
-
 		MonetaryUnits(amount);
+		readNumber.close();
 	}
 }
