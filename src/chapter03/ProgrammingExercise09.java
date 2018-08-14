@@ -48,5 +48,6 @@ public class ProgrammingExercise09 {
 		else {
 			System.out.print(isbn[9]);
 		}
+		readNumber.close();
 	}
 }
