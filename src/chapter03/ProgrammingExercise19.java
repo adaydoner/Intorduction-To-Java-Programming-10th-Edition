@@ -51,5 +51,6 @@ public class ProgrammingExercise19 {
 		else {
 			System.out.println("It can not be a triangle because of the invalid side values.");
 		}
+		readNumber.close();
 	}
 }
