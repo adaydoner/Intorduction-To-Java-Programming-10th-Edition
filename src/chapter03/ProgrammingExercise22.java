@@ -17,7 +17,7 @@ public class ProgrammingExercise22 {
 		double distance;
 		boolean answer;
 		distance = Math.pow(Math.pow(x, 2) + Math.pow(y, 2), 0.5);
-		if(10 - distance > 0) {
+		if(9 - distance >= 0) {
 			answer = true;
 		}
 		else {
