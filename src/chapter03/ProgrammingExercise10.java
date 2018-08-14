@@ -32,5 +32,6 @@ public class ProgrammingExercise10 {
 		} else {
 			System.out.println("WRONG !" + " The answer is : " + (number1 - number2));
 		}
+		readNumber.close();
 	}
 }
