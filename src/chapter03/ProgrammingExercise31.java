@@ -39,11 +39,14 @@ public class ProgrammingExercise31 {
 			exchangeAmount = ConvertUSDtoRMB(amount,exchangeRate);
 			System.out.printf("$%.1f is %.1f yuan",amount,exchangeAmount);
 		}
-		else {
+		else if(exchangeChoose == 1){
 			System.out.print("Enter the RMB amount : ");
 			amount = readNumber.nextDouble();
 			exchangeAmount = ConvertRMBtoUSD(amount,exchangeRate);
 			System.out.printf("%.1f yuan is $%.2f",amount,exchangeAmount);
+		}
+		else {
+			System.out.print("Incorrect input.");
 		}
 		readNumber.close();
 	}
