@@ -20,7 +20,7 @@ package chapter03;
 import java.util.Scanner;
 
 public class ProgrammingExercise28 {
-	public static void CheckRectanglesPosition(double x1, double y1, double width1, double height1, double x2, double y2, double width2, double height2) {
+	public static void CheckRectanglesStates(double x1, double y1, double width1, double height1, double x2, double y2, double width2, double height2) {
 		if( y2 >= y1 + Math.abs(height1 / 2 - height2 / 2) && y2 <= y1 + Math.abs(height1 / 2 + height2 / 2) ||
 			y2 <= y1 - Math.abs(height1 / 2 + height2 / 2) && y2 >= y1 - Math.abs(height1 / 2 - height2 / 2) ||
 			x2 >= x1 + Math.abs(width1 / 2 - width2 / 2) && x2 <= x1 + Math.abs(width1 / 2 + width2 / 2) ||
@@ -58,7 +58,7 @@ public class ProgrammingExercise28 {
 		r2y = readNumber.nextDouble();
 		r2width = readNumber.nextDouble();
 		r2height = readNumber.nextDouble();
-		CheckRectanglesPosition(r1x, r1y, r1width, r1height,r2x, r2y, r2width, r2height);
+		CheckRectanglesStates(r1x, r1y, r1width, r1height,r2x, r2y, r2width, r2height);
 		readNumber.close();
 	}
 }
