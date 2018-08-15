@@ -16,11 +16,8 @@ public class ProgrammingExercise29 {
 	}
 
 	public static void CheckCirclesStates(double circle1CentersX, double circle1CentersY, double circle1Radius, double circle2CentersX, double circle2CentersY, double circle2Radius) {
-		// 0.5 5.1 13
-		// 1 1.7 4.5
-		// c2 is inside c1
 		double distanceBetweenCentersOfC1C2 = DistanceBetweenTwoPoints(circle1CentersX, circle1CentersY, circle2CentersX, circle2CentersY);
-		if(distanceBetweenCentersOfC1C2 <= Math.abs(circle1Radius - circle2Radius)) {
+		if(distanceBetweenCentersOfC1C2 < Math.abs(circle1Radius - circle2Radius)) {
 			System.out.println("c2 is inside c1.");
 		}
 		else if(distanceBetweenCentersOfC1C2 <= circle1Radius + circle2Radius) {
