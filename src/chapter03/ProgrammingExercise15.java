@@ -16,7 +16,7 @@ public class ProgrammingExercise15 {
 		Scanner readNumber = new Scanner(System.in);
 		int usersNumber = 0;
 		int[] usersNumbersDigits = new int[3];
-		int lotteryNumber = (int)(Math.random() * 1000);
+		int lotteryNumber = (int)(Math.random() * 900) + 100;
 		int[] lotteryNumbersDigits = new int[3];
 		while (usersNumber < 100 || usersNumber > 999) {
 			System.out.print("Enter your number : ");
