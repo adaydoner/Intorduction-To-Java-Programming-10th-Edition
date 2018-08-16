@@ -17,7 +17,7 @@ public class ProgrammingExercise11 {
 			days = 31;
 		} 
 		else if (month == 2) {
-			if (year % 4 == 0) {
+			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
 				days = 29;
 			} 
 			else {
