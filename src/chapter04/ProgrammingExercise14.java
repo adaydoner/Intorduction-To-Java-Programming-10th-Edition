@@ -12,17 +12,13 @@ public class ProgrammingExercise14 {
 		grade = Character.toUpperCase(grade);
 		if (grade == 'A') {
 			return 4;
-		}
-		if (grade == 'B') {
+		} else if (grade == 'B') {
 			return 3;
-		}
-		if (grade == 'C') {
+		} else if (grade == 'C') {
 			return 2;
-		}
-		if (grade == 'D') {
+		} else if (grade == 'D') {
 			return 1;
-		}
-		if (grade == 'F') {
+		} else if (grade == 'F') {
 			return 0;
 		} else {
 			return -1;
