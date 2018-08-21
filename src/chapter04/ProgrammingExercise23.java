@@ -38,11 +38,11 @@ public class ProgrammingExercise23 {
 
 		System.out.printf("Employee Name     : %s \n", name);
 		System.out.printf("Hours Worked      : %.2f \n", workedHours);
-		System.out.printf("Pay Rate          : %.2f \n", payRate);
-		System.out.printf("Gross Pay         : %.2f \n", grossPay);
+		System.out.printf("Pay Rate          : $%.2f \n", payRate);
+		System.out.printf("Gross Pay         : $%.2f \n", grossPay);
 		System.out.println("Deductions        :");
-		System.out.println("   Federal Withholding ( " + federalTaxRate * 100 + "% ) : " + federalWithHolding);
-		System.out.println("   State Withholding ( " + stateTaxRate * 100 + "% )    : " + stateWithHolding);
+		System.out.println("   Federal Withholding ( " + federalTaxRate * 100 + "% ) : $" + federalWithHolding);
+		System.out.println("   State Withholding ( " + stateTaxRate * 100 + "% )    : $" + stateWithHolding);
 		System.out.printf("   Total Deduction               : $%.2f \n", totalDeduction);
 		System.out.printf("Net Pay           : $%.2f", netPay);
 		input.close();
