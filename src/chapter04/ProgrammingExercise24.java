@@ -9,18 +9,19 @@ public class ProgrammingExercise24 {
 
 	public static void SortCities(String[] cities) {
 		String temp;
+		String[] cities2 = new String[3];
+		for (int i = 0; i < cities.length; i++) {
+			cities2[i] = cities[i].toLowerCase();
+		}
 		for (int i = 0; i < 3; i++) {
 			for (int j = i + 1; j < 3; j++) {
-				if (Character.toUpperCase(cities[j].charAt(0)) < Character.toUpperCase(cities[i].charAt(0))) {
+				if (cities2[i].compareTo(cities2[j]) > 0) {
+					temp = cities2[i];
+					cities2[i] = cities2[j];
+					cities2[j] = temp;
 					temp = cities[i];
 					cities[i] = cities[j];
 					cities[j] = temp;
-				} else if (Character.toUpperCase(cities[j].charAt(0)) == Character.toUpperCase(cities[i].charAt(0))) {
-					if(Character.toUpperCase(cities[j].charAt(1)) < Character.toUpperCase(cities[i].charAt(1))) {
-						temp = cities[i];
-						cities[i] = cities[j];
-						cities[j] = temp;
-					}
 				}
 			}
 		}
@@ -37,6 +38,6 @@ public class ProgrammingExercise24 {
 		System.out.print("Enter the third city : ");
 		cities[2] = input.nextLine();
 		SortCities(cities);
-
+		input.close();
 	}
 }
