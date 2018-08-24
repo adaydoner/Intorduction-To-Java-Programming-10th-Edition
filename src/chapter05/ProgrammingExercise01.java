@@ -30,10 +30,14 @@ public class ProgrammingExercise01 {
 			i++;
 		} while (intArray[i - 1] != 0);
 
-		System.out.println("The number of positives is : " + positiveNumberCounter);
-		System.out.println("The number of negatives is : " + negativeNumberCounter);
-		System.out.println("The total is : " + sumOfNumbers);
-		System.out.println("The average is : " + (sumOfNumbers / (i - 1)));
+		if (intArray[0] == 0) {
+			System.out.println("No numbers are entered except 0.");
+		} else {
+			System.out.println("The number of positives is : " + positiveNumberCounter);
+			System.out.println("The number of negatives is : " + negativeNumberCounter);
+			System.out.println("The total is : " + sumOfNumbers);
+			System.out.println("The average is : " + (sumOfNumbers / (i - 1)));
+		}
 		input.close();
 	}
 }
