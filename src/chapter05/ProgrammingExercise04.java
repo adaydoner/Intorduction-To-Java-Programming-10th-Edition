@@ -8,9 +8,10 @@ public class ProgrammingExercise04 {
 
 	public static void main(String[] args) {
 		final double MILES_TO_KM = 1.609;
-		System.out.println("Miles\tKilometers");
+		System.out.printf("%-10s%10s","Miles","Kilometers");
+		System.out.println();
 		for (int i = 1; i <= 10; i ++) {
-			System.out.printf("%-5d\t%-10.3f\n", i, (i * MILES_TO_KM));
+			System.out.printf("%-10d%10.3f\n", i, (i * MILES_TO_KM));
 		}
 	}
 }
