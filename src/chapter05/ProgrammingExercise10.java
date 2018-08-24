@@ -14,7 +14,7 @@ public class ProgrammingExercise10 {
 				System.out.print(i + " ");
 				i += 30; // When we find first number that divisible by 5 and 6 we can add 30 and find next number quicklier.
 				counter++; // to count numbers that program write out so we can make new line in every ten number.
-				if (counter % 10 == 0 && counter != 0) {
+				if (counter % 10 == 0) {
 					System.out.println(); // new line in every ten number.
 				}
 			} else {
