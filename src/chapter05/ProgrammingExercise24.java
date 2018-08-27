@@ -1,5 +1,5 @@
 /*
- * (Sum a series) Write a program to sum the following series:
+ * ( Sum a series) Write a program to sum the following series:
  * 1/3 + 3/5 + 5/7 + ... + 95/97 + 	97/99
  */
 package chapter05;
