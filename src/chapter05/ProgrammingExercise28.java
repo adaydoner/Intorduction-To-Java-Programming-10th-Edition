@@ -40,7 +40,6 @@ public class ProgrammingExercise28 {
 		case 4: firstDay = "Friday"; break;
 		case 5: firstDay = "Saturday"; break;
 		case 6 : firstDay = "Sunday"; break;
-		case -1 : firstDay = "Sunday"; break; // this one is for loop
 		default : firstDay = "Invalid Day"; break;
 		}
 		return firstDay;
