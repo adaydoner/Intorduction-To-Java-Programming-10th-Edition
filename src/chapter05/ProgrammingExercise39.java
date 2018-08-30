@@ -15,26 +15,26 @@
  */
 package chapter05;
 
+import java.text.DecimalFormat;
+
 public class ProgrammingExercise39 {
 
 	public static void main(String[] args) {
-		// baseSalary = $ 5_000;
-		// goal = $ 30_000;
-		// need $ 25_000 from comission.
-		double commission;
+		DecimalFormat format = new DecimalFormat("###,###.00");
+		double commission = 0;
 		double salesAmount = 0.01;
 		do {
 			salesAmount += 0.01;
 
-			if (salesAmount >= 10000.01) {
-				commission = 900.0 + (salesAmount - 10000.0) * 0.12;
-			} else if (salesAmount >= 5000.01) {
-				commission = 400.0 + (salesAmount - 5000.0) * 0.1;
-			} else {
+			if (salesAmount <= 5_000) {
 				commission = salesAmount * 0.08;
+			} else if (salesAmount <= 10_000) {
+				commission = (5_000 * 0.08) + ((salesAmount - 5_000) * 0.1);
+			} else if (salesAmount > 10_000) {
+				commission = (5_000 * 0.08) + (5_000 * 0.1) + (salesAmount - 10_000) * 0.12;
 			}
-		} while (commission < 25000.0);
+		} while (commission < 30_000);
 
-		System.out.println("You need $" + (int) (salesAmount * 100.0) / 100.0 + " sales amount to make a commission of $25000");
+		System.out.println("You need $" + format.format(salesAmount) + " sales amount to make a commission of $30.000");
 	}
 }
