@@ -51,6 +51,6 @@ public class ProgrammingExercise19 {
 		} else {
 			System.out.println("Area : " + areaOfTriangle);
 		}
-
+		input.close();
 	}
 }
