@@ -23,20 +23,19 @@ public class ProgrammingExercise27 {
 	}
 
 	private static int reverseOfNumber(int number) {
-		String numberInString = String.valueOf(number);
+		String numberInString = String.valueOf(number); // we convert our number that is an integer to  a String , just because use the String methods.
 		String reverseOfNumber = "";
 		for (int i = numberInString.length() - 1; i >= 0 ; i--) {
-			reverseOfNumber += numberInString.charAt(i);
+			reverseOfNumber += numberInString.charAt(i); // we wrote the digits backwards.
 		}
-		number = Integer.parseInt(reverseOfNumber);
+		number = Integer.parseInt(reverseOfNumber); // we turn string back in integer.
 		return number;
 	}
 
 	public static boolean isPrime(int number) {
 		int divideNumber = 2;
 		while (divideNumber < number) {
-			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a
-												// prime.
+			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a prime.
 				return false;
 			}
 			divideNumber++;
