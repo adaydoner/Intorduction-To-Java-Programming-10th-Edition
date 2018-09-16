@@ -45,7 +45,7 @@ public class ProgrammingExercise26 {
 		while(palindromicPrimeCounter < 100) {
 			if(isPrime(number) && isPalindrome(number)) {
 				palindromicPrimeCounter++;
-				System.out.printf("%10d",number);
+				System.out.printf("%6d",number);
 				if(palindromicPrimeCounter % 10 == 0) {
 					System.out.println();
 				}
