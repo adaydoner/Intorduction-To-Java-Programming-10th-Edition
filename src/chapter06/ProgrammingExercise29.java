@@ -13,8 +13,7 @@ public class ProgrammingExercise29 {
 		int divideNumber = 2;
 		if(number == 1 || number == 0) return false;
 		while (divideNumber < number) {
-			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a
-												// prime.
+			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a prime.
 				return false;
 			}
 			divideNumber++;
