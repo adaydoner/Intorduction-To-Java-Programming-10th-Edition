@@ -16,13 +16,13 @@ package chapter06;
 
 public class ProgrammingExercise30 {
 
-	private static int rollDice() {
+	public static int rollDice() {
 		int diceValue;
 		diceValue = (int) (Math.random() * 6) + 1; // random method give between 0-0.99 so we have to multiple by 6 and then add 1 to ignore 0 value
 		return diceValue;
 	}
 
-	private static int resultOfCraps(int dice1, int dice2) {
+	public static int resultOfCraps(int dice1, int dice2) {
 		int sumOfDices = dice1 + dice2;
 		if (sumOfDices == 2 || sumOfDices == 3 || sumOfDices == 12) {
 			return -1;
