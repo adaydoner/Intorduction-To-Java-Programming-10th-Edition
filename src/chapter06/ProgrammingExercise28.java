@@ -18,8 +18,7 @@ public class ProgrammingExercise28 {
 		if(number == 1 || number == 0) return false;
 		int divideNumber = 2;
 		while (divideNumber < number) {
-			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a
-												// prime.
+			if (number % divideNumber == 0) { // if number can divided by any number between 2 and (number -1) its not a prime.
 				return false;
 			}
 			divideNumber++;
@@ -28,8 +27,8 @@ public class ProgrammingExercise28 {
 	}
 
 	private static int mersennePrime(int powerValue) {
-		int number = (int)Math.pow(2, powerValue) - 1;
-		if(isPrime(number)) {
+		int number = (int)Math.pow(2, powerValue) - 1; // we have value of 2^p-1 and check if its prime.
+		if(isPrime(number)) { // if its prime then we have a mersenne prime.
 			return number;
 		}
 		return -1;
