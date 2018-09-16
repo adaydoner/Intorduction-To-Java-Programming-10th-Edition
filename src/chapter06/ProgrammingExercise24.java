@@ -39,7 +39,7 @@ public class ProgrammingExercise24 {
 		int daysTillCurrentMonth = getNumOfDaysToReachThatMonth(currentYear, currentMonthNum);
 		int today = (int) daysInCurrentYear - daysTillCurrentMonth; // **(DD)/MM//YYYY**
 
-		return (today + "/" + month + "/"+ currentYear + "\n" + currentHour + ":" + currentMinute + ":" + currentSecond + " GMT");
+		return (today + "/" + month + "/"+ currentYear + "\n" + currentHour + ":" + currentMinute + ":" + currentSecond + " GMT (+3)");
 	}
 
 	public static int numberOfLeapYearsSince1970(long year) {
