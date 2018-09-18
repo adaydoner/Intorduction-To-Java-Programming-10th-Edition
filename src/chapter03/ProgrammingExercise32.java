@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class ProgrammingExercise32 {
 
-	private static void StatesOfThirdPoint(double point0x, double point0y, double point1x, double point1y, double point2x, double point2y) {
+	public static void StatesOfThirdPoint(double point0x, double point0y, double point1x, double point1y, double point2x, double point2y) {
 		double formula;
 		formula = (point1x - point0x) * (point2y - point0y) - (point2x - point0x) * (point1y - point0y);
 		if(formula > 0) {
