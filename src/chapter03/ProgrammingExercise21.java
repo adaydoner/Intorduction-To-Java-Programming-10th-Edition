@@ -13,6 +13,7 @@ public class ProgrammingExercise21 {
 		int century = year / 100;
 		int yearOfTheCentury = year % 100;
 		day = (dayOfTheMonth + 26 * (month + 1) / 10 + yearOfTheCentury + yearOfTheCentury / 4 + century / 4 + 5 * century) % 7;
+		day = (day + 5) % 7;
 		return day;
 	}
 
@@ -22,7 +23,7 @@ public class ProgrammingExercise21 {
 		int month;
 		int dayOfTheMonth;
 		int day;
-		String[] daysOfWeek = {"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"};
+		String[] daysOfWeek = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 		System.out.print("Enter a year(e.g., 2012) : ");
 		year = readNumber.nextInt();
 		System.out.print("Enter a month(1-12) : ");
