@@ -21,8 +21,8 @@ public class ProgrammingExercise01 {
 		numberOfStudents = getNumberOfStudents();
 		int[] scoresOfStudents = new int[numberOfStudents];
 		char[] gradesOfStudents = new char[numberOfStudents];
-		scoresOfStudents = getScores(numberOfStudents);
-		gradesOfStudents = getGrades(scoresOfStudents);
+		getScores(scoresOfStudents);
+		getGrades(scoresOfStudents,gradesOfStudents);
 		printStudentsWithGrades(scoresOfStudents,gradesOfStudents);
 
 	}
@@ -33,10 +33,9 @@ public class ProgrammingExercise01 {
 		}
 	}
 
-	public static char[] getGrades(int[] scoresOfStudents) {
+	public static void getGrades(int[] scoresOfStudents, char[] grades) {
 		int bestScore;
 		bestScore = getBestScore(scoresOfStudents);
-		char[] grades = new char[scoresOfStudents.length];
 		for (int i = 0; i < scoresOfStudents.length; i++) {
 			if(scoresOfStudents[i]  >= bestScore - 10) {
 				grades[i] = 'A';
@@ -50,7 +49,6 @@ public class ProgrammingExercise01 {
 				grades[i] = 'F';
 			}
 		}
-		return grades;
 	}
 
 	public static int getBestScore(int[] scoresOfStudents) {
@@ -63,18 +61,16 @@ public class ProgrammingExercise01 {
 		return bestScore;
 	}
 
-	public static int[] getScores(int numberOfStudents) {
-		int[] scores = new int[numberOfStudents];
-		System.out.print("Enter " + numberOfStudents + " scores :");
+	public static void getScores(int[] scores) {
+		System.out.print("Enter " + scores.length + " scores : ");
 		for (int i = 0; i < scores.length; i++) {
 			scores[i] = input.nextInt();
 		}
-		return scores;
 	}
 
 	public static int getNumberOfStudents() {
 		int numberOfStudents;
-		System.out.print("Enter the number of students :");
+		System.out.print("Enter the number of students : ");
 		numberOfStudents = input.nextInt();
 		return numberOfStudents;
 	}
