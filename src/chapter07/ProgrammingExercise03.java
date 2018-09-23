@@ -24,59 +24,59 @@ public class ProgrammingExercise03 {
 
 	public static void printOccurrencesOfNumbersThatUserSpecified(int[] finalArrayThatHasOnlyNumbersSpecified) {
 		int occurrences;
-		int[] uniqueNumbers = new int[finalArrayThatHasOnlyNumbersSpecified.length]; // make new array to work on it.
-		uniqueNumbersArray(finalArrayThatHasOnlyNumbersSpecified,uniqueNumbers); // numbers that exist more than once written only one time into new array. 
-		sortArrayElementsAscendingOrder(uniqueNumbers); // sort the unique numbers to print easier according to exercise.
-		for (int i = 0; i < uniqueNumbers.length; i++) {
+		int[] distinctNumbersArray = new int[finalArrayThatHasOnlyNumbersSpecified.length]; // make new array to work on it.
+		distinctNumbersArray(finalArrayThatHasOnlyNumbersSpecified,distinctNumbersArray); // numbers that exist more than once written only one time into new array. 
+		sortArrayElementsAscendingOrder(distinctNumbersArray); // sort the distinct numbers to print easier according to exercise.
+		for (int i = 0; i < distinctNumbersArray.length; i++) {
 			occurrences = 0;
 			// we dont want to print occurrences of zeros.
-			if (uniqueNumbers[i] == 0) {
+			if (distinctNumbersArray[i] == 0) {
 				continue;
 			}
 			// count occurrences of each element except zero.
-			for (int j = 0; j < uniqueNumbers.length; j++) {
-				if (uniqueNumbers[i] == finalArrayThatHasOnlyNumbersSpecified[j]) {
+			for (int j = 0; j < distinctNumbersArray.length; j++) {
+				if (distinctNumbersArray[i] == finalArrayThatHasOnlyNumbersSpecified[j]) {
 					occurrences++;
 				}
 			}
 			if(occurrences > 1) {
-				System.out.printf("%2d occurs %2d times\n", uniqueNumbers[i], occurrences);
+				System.out.printf("%2d occurs %2d times\n", distinctNumbersArray[i], occurrences);
 			} else {
-				System.out.printf("%2d occurs %2d time\n", uniqueNumbers[i], occurrences);
+				System.out.printf("%2d occurs %2d time\n", distinctNumbersArray[i], occurrences);
 			}
 		}
 	}
 
-	public static void sortArrayElementsAscendingOrder(int[] uniqueNumbers) {
+	public static void sortArrayElementsAscendingOrder(int[] distinctNumbers) {
 		int temp;
-		for (int i = 0; i < uniqueNumbers.length; i++) {
-			if(uniqueNumbers[i] == 0) {
+		for (int i = 0; i < distinctNumbers.length; i++) {
+			if(distinctNumbers[i] == 0) {
 				continue;
 			}
-			for (int j = (i + 1); j < uniqueNumbers.length; j++) {
-				if(uniqueNumbers[j] < uniqueNumbers[i]) {
-					temp = uniqueNumbers[i];
-					uniqueNumbers[i] = uniqueNumbers[j];
-					uniqueNumbers[j] = temp;
+			for (int j = (i + 1); j < distinctNumbers.length; j++) {
+				if(distinctNumbers[j] < distinctNumbers[i]) {
+					temp = distinctNumbers[i];
+					distinctNumbers[i] = distinctNumbers[j];
+					distinctNumbers[j] = temp;
 				}
 			}
 		}
 	}
 
-	public static void uniqueNumbersArray(int[] finalArrayThatHasOnlyNumbersSpecified, int[] uniqueNumbers) {
-		int uniqueNumberWriter = 0;
+	public static void distinctNumbersArray(int[] finalArrayThatHasOnlyNumbersSpecified, int[] distinctNumbers) {
+		int distinctNumberWriter = 0;
 		boolean flag;
 		for (int i = 0; i < finalArrayThatHasOnlyNumbersSpecified.length; i++) {
 			flag = false;
-			for (int j = 0; j < uniqueNumbers.length; j++) {
-				if (finalArrayThatHasOnlyNumbersSpecified[i] == uniqueNumbers[j]) {
+			for (int j = 0; j < distinctNumbers.length; j++) {
+				if (finalArrayThatHasOnlyNumbersSpecified[i] == distinctNumbers[j]) {
 					flag = true;
 					break;
 				}
 			}
 			if (flag == false) {
-				uniqueNumbers[uniqueNumberWriter] = finalArrayThatHasOnlyNumbersSpecified[i];
-				uniqueNumberWriter++;
+				distinctNumbers[distinctNumberWriter] = finalArrayThatHasOnlyNumbersSpecified[i];
+				distinctNumberWriter++;
 			}
 		}
 	}
