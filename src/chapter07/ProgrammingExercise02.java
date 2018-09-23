@@ -11,12 +11,13 @@ public class ProgrammingExercise02 {
 	public static void main(String[] args) {
 		final int NUMBER_OF_INTEGERS = 10;
 		int[] integersArray = new int[NUMBER_OF_INTEGERS];
-		integersArray = getNumbers(NUMBER_OF_INTEGERS,integersArray);
+		getNumbers(NUMBER_OF_INTEGERS,integersArray);
 		reverseOfNumbersInArray(integersArray);
 		printArray(integersArray);
 	}
 
 	public static void printArray(int[] integersArray) {
+		System.out.print("Reverse of them : ");
 		for (int i = 0; i < integersArray.length; i++) {
 			System.out.printf("%4d",integersArray[i]);
 			if((i + 1) % 10 == 0) {
@@ -35,12 +36,11 @@ public class ProgrammingExercise02 {
 		}
 	}
 
-	public static int[] getNumbers(int numberOfIntegers, int[] array) {
+	public static void getNumbers(int numberOfIntegers, int[] array) {
 		System.out.print("Enter " + numberOfIntegers + " integer : ");
 		
 		for (int i = 0; i < numberOfIntegers; i++) {
 			array[i] = input.nextInt();
 		}
-		return array;
 	}
 }
