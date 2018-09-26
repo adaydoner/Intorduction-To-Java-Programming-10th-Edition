@@ -33,7 +33,7 @@ public class ProgrammingExercise11 {
 		System.out.printf("%s%3.2f","The mean is \n",mean);
 		System.out.printf("%s%3.5f","The deviation is ",deviation);
 		
-		
+		input.close();
 	}
 	public static double mean(double[] x) {
 		double sum = 0;
