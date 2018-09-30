@@ -15,15 +15,15 @@ public class ProgrammingExercise14 {
 	public static void main(String[] args) {
 		final int ARRAY_SIZE = 5;
 		Scanner input = new Scanner(System.in);
-		int[] specified_numbers = new int[ARRAY_SIZE];
+		int[] specifiedNumbers = new int[ARRAY_SIZE];
 		int greatestCommonDivisor;
 		
 		System.out.println("Enter " + ARRAY_SIZE + " integer numbers to find their greatest common divisor : ");
 		for (int i = 0; i < ARRAY_SIZE; i++) {
-			specified_numbers[i] = input.nextInt();
+			specifiedNumbers[i] = input.nextInt();
 		}
 		
-		greatestCommonDivisor = gcd(specified_numbers);
+		greatestCommonDivisor = gcd(specifiedNumbers);
 		System.out.print("Greatest common divisor is : " + greatestCommonDivisor);
 		
 		input.close();
