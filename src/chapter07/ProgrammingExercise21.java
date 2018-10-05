@@ -56,8 +56,8 @@ public class ProgrammingExercise21 {
 
 	public static boolean isEmpty(int[] slots) {
 
-		for (int slot : slots) {
-			if (slot != 0) {
+		for (int i = 0; i < slots.length; i++) {
+			if (slots[i] != 0) {
 				return false;
 			}
 		}
@@ -66,8 +66,8 @@ public class ProgrammingExercise21 {
 	}
 
 	public static boolean isRowEmpty(int[] slots, int rowNum) {
-		for (int slot : slots) {
-			if (slot == rowNum) {
+		for (int i = 0; i < slots.length; i++) {
+			if (slots[i] == rowNum) {
 				return false;
 			}
 		}
