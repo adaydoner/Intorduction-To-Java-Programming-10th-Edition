@@ -33,18 +33,34 @@ public class ProgrammingExercise05 {
 		
 		sumOfTwoMatrix = addMatrix(matrix1,matrix2);
 		
-		printMatrix(sumOfTwoMatrix);
+		System.out.println("The matrices are added as follows ");
 		
-		input.close();
-	}
-	public static void printMatrix(double[][] sumOfTwoMatrix) {
 		for (int i = 0; i < sumOfTwoMatrix.length; i++) {
 			for (int j = 0; j < sumOfTwoMatrix[i].length; j++) {
-				System.out.printf("%6.2f ",sumOfTwoMatrix[i][j]);
+				System.out.printf("%-6.2f",matrix1[i][j]);
+			}
+			if(i == 1) {
+				System.out.printf("%2s%s%4s"," ","+"," ");
+			} else {
+				System.out.printf("%7s"," ");
+			}
+			for (int j = 0; j < sumOfTwoMatrix[i].length; j++) {
+				System.out.printf("%-6.2f",matrix2[i][j]);
+			}
+			if(i == 1) {
+				System.out.printf("%2s%s%4s"," ","="," ");
+			} else {
+				System.out.printf("%7s"," ");
+			}
+			for (int j = 0; j < sumOfTwoMatrix[i].length; j++) {
+				System.out.printf("%-6.2f",sumOfTwoMatrix[i][j]);
 			}
 			System.out.println();
 		}
+		
+		input.close();
 	}
+	
 	public static double[][] addMatrix(double[][] a, double[][] b){
 		double[][] sumMatrix = new double[3][3];
 		
