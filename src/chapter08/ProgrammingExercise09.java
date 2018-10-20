@@ -11,8 +11,8 @@ public class ProgrammingExercise09 {
 	public static void main(String[] args) {
 		char[][] ticTacToe = new char[7][7];
 		makeTicTacToeBoard(ticTacToe); // create schema of sample board.
-		printBoard(ticTacToe); 
-		playTicTacToe(ticTacToe);
+		printBoard(ticTacToe); // show board.
+		playTicTacToe(ticTacToe); // let users play it.
 	}
 
 	public static void playTicTacToe(char[][] ticTacToe) {
@@ -20,73 +20,97 @@ public class ProgrammingExercise09 {
 		int column;
 		char player1 = 'X';
 		char player2 = 'O';
-		while (true) { // game can only end at isGameOver method
-			do { // this do while statement will block user from enter a spot where is already used by someone.
-				do { // this do while statement will block user enter something else from 0,1 or 2
-					System.out.println("Enter a row (0, 1, or 2) for player X : ");
-					row = input.nextInt();
-				} while (row != 0 && row != 1 && row != 2);
-				do {
-					System.out.println("Enter a column (0, 1, or 2) for player X : ");
-					column = input.nextInt();
-				} while (column != 0 && column != 1 && column != 2);
+		while (true) { // game can only end if isGameOver method return true , which program check it after every move. 
+			do { // this do while statement will block user from enter a spot where is already used.
+					row = getRowCoordinate(player1);
+					column = getColumnCoordinate(player1);
 			} while (!isSpotFree(ticTacToe,row,column));
+			
 			putOnBoard(ticTacToe, row, column, player1); // after we got valid row and column we put this on board by player symbol
 			printBoard(ticTacToe); // print board to user after put symbol.
-			isGameOver(ticTacToe, player1); // check if game is over
+			if(isGameOver(ticTacToe, player1)) System.exit(0); // check if game is over
+			
 			do {
-				do {
-					System.out.println("Enter a row (0, 1, or 2) for player O : ");
-					row = input.nextInt();
-				} while (row != 0 && row != 1 && row != 2);
-				do {
-					System.out.println("Enter a column (0, 1, or 2) for player O : ");
-					column = input.nextInt();
-				} while (column != 0 && column != 1 && column != 2);
+				row = getRowCoordinate(player2);
+				column = getColumnCoordinate(player2);
 			} while (!isSpotFree(ticTacToe,row,column));
+			
 			putOnBoard(ticTacToe, row, column, player2);
 			printBoard(ticTacToe);
-			isGameOver(ticTacToe, player2);
+			if(isGameOver(ticTacToe, player2)) System.exit(0);
 		}
 	}
 
+	public static int getColumnCoordinate(char playerType) {
+		int column;
+		do {
+			System.out.print("Enter a column (1, 2, or 3) for player " + playerType + " : ");
+			column = input.nextInt();
+		} while (column != 1 && column != 2 && column != 3); // this do while statement will block user enter something else from 0,1 or 2
+		return column;
+	}
+
+	public static int getRowCoordinate(char playerType) {
+		int row;
+		do {
+			System.out.print("Enter a row (1, 2, or 3) for player " + playerType + " : ");
+			row = input.nextInt();
+		} while (row != 1 && row != 2 && row != 3); // this do while statement will block user enter something else from 0,1 or 2
+		return row;
+	}
+
 	public static boolean isSpotFree(char[][] ticTacToe, int row, int column) {
-		int rowForBoard;
-		int columnForBoard;
-		if (row == 0) {
-			rowForBoard = 1;
-		} else if (row == 1) {
-			rowForBoard = 3;
-		} else {
-			rowForBoard = 5;
-		}
-		if (column == 0) {
-			columnForBoard = 1;
-		} else if (column == 1) {
-			columnForBoard = 3;
-		} else {
-			columnForBoard = 5;
-		}
-		if(ticTacToe[rowForBoard][columnForBoard] == ' ') {
+		// before we do any process on board that we made with multi-dimensional char array , we need to convert coordinate to corresponding index in array
+		int rowIndexForArray;
+		int columnIndexForArray;
+		rowIndexForArray = convertCoordinateToValueThatAlghoritmWouldUnderstand(row);
+		columnIndexForArray = convertCoordinateToValueThatAlghoritmWouldUnderstand(column);
+		if(ticTacToe[rowIndexForArray][columnIndexForArray] == ' ') {
 			return true;
 		}
 		return false;
 	}
 
-	public static void isGameOver(char[][] ticTacToe, char player) {
+	public static void putOnBoard(char[][] ticTacToe, int row, int column, char player) {
+		int rowIndexForArray;
+		int columnIndexForArray;
+		rowIndexForArray = convertCoordinateToValueThatAlghoritmWouldUnderstand(row);
+		columnIndexForArray = convertCoordinateToValueThatAlghoritmWouldUnderstand(column);
+		// we put the player's symbol on valid spot.
+		if (player == 'X') {
+			ticTacToe[rowIndexForArray][columnIndexForArray] = 'X';
+		} else {
+			ticTacToe[rowIndexForArray][columnIndexForArray] = 'O';
+		}
+	}
+
+	public static int convertCoordinateToValueThatAlghoritmWouldUnderstand(int coordinate) {
+		int correspondingIndexValue;
+		if (coordinate == 1) {
+			correspondingIndexValue = 1;
+		} else if (coordinate == 2) {
+			correspondingIndexValue = 3;
+		} else {
+			correspondingIndexValue = 5;
+		}
+		return correspondingIndexValue;
+	}
+
+	public static boolean isGameOver(char[][] ticTacToe, char player) {
 		if (isAnyRowSame(ticTacToe, player)) { 
 			System.out.println(player + " is won");
-			System.exit(0);
+			return true;
 		} else if (isAnyColumnSame(ticTacToe, player)) {
 			System.out.println(player + " is won");
-			System.exit(0);
+			return true;
 		} else if (isAnyDiagonalSame(ticTacToe, player)) {
 			System.out.println(player + " is won");
-			System.exit(0);
+			return true;
 		} else if (isBoardFull(ticTacToe)) {
 			System.out.println("Draw..");
-			System.exit(0);
+			return true;
 		}
+		return false;
 	}
 
 	public static boolean isBoardFull(char[][] ticTacToe) {
@@ -126,39 +150,6 @@ public class ProgrammingExercise09 {
 			}
 		}
 		return false;
-	}
-
-	public static void putOnBoard(char[][] ticTacToe, int row, int column, char player) {
-		int rowForBoard;
-		int columnForBoard;
-		/*
-		 *  these convertion is necessary since our board is [7][7] char array that has game spots on its
-		 *   1,1 1,3 1,5
-		 *   3,1 3,3 3,5
-		 *   5,1 5,3 5,5
-		 *   indices.
-		 */
-				
-		if (row == 0) {
-			rowForBoard = 1;
-		} else if (row == 1) {
-			rowForBoard = 3;
-		} else {
-			rowForBoard = 5;
-		}
-		if (column == 0) {
-			columnForBoard = 1;
-		} else if (column == 1) {
-			columnForBoard = 3;
-		} else {
-			columnForBoard = 5;
-		}
-		// we put the player's symbol on valid spot.
-		if (player == 'X') {
-			ticTacToe[rowForBoard][columnForBoard] = 'X';
-		} else {
-			ticTacToe[rowForBoard][columnForBoard] = 'O';
-		}
 	}
 
 	public static void printBoard(char[][] ticTacToe) {
