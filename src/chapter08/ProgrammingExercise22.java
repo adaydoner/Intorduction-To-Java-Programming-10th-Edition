@@ -46,15 +46,15 @@ public class ProgrammingExercise22 {
 	}
 
 	public static void checkColumnsIfHasEven1s(int[][] array) {
-		for (int row = 0; row < array.length; row++) {
+		for (int column = 0; column < array[0].length; column++) {
 			int counter = 0;
-			for (int column = 0; column < array[row].length; column++) {
-				if (array[column][row] == 1) {
+			for (int row = 0; row < array.length; row++) {
+				if (array[row][column] == 1) {
 					counter++;
 				}
 			}
 			if (counter % 2 == 0) {
-				System.out.printf("%d%s", row, ". column has even number of 1s.\n");
+				System.out.printf("%d%s", column, ". column has even number of 1s.\n");
 			}
 		}
 	}
