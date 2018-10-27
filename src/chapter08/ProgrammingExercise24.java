@@ -75,16 +75,21 @@ public class ProgrammingExercise24 {
 	}
 
 	public static boolean validationForSmallBoxes(int[][] sudoku) {
-		for (int k = 0; k < sudoku.length; k++) {
-			for (int k2 = 0; k2 < sudoku[k].length; k2++) {
-				for (int row = (k / 3) * 3; row < (k / 3) * 3 + 3; row++) {
-					for (int column = (k2 / 3) * 3; column < (k2 / 3) * 3 + 3; column++) {
-						if (row != k && column != k2 && sudoku[row][column] == sudoku[k][k2]) {
-							return false;
-						}
+
+		for (int k = 0; k < 3; k++) {
+			for (int k2 = 0; k2 < 3; k2++) {
+				boolean[] stateOfEveryNumberInRow = new boolean[9];
+				for (int row = k; row < k * 3 + 3; row++) {
+					for (int column = k2; column < k2 * 3 + 3; column++) {
+						stateOfEveryNumberInRow[sudoku[row][column] - 1] = true;
 					}
-				} 
-			} 
+				}
+				for (boolean b : stateOfEveryNumberInRow) {
+					if(b == false) {
+						return false;
+					}
+				}
+			}
 		}
 		return true;
 	}
