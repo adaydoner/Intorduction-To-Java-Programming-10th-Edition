@@ -20,7 +20,7 @@ public class ProgrammingExercise36 {
 		System.out.print("Enter number n : ");
 		sizeOfSquareArray = input.nextInt();
 		char[][] latinSquare = new char[sizeOfSquareArray][sizeOfSquareArray];
-		System.out.println("Enter " + sizeOfSquareArray + " rows of capital letters separated by spaces:");
+		System.out.println("Enter " + sizeOfSquareArray + " rows of letters separated by spaces:");
 		for (int i = 0; i < latinSquare.length; i++) {
 			for (int j = 0; j < latinSquare[i].length; j++) {
 				latinSquare[i][j] = input.next().charAt(0);
@@ -37,11 +37,11 @@ public class ProgrammingExercise36 {
 		char furthestChar = (char) ((latinSquare.length) + 'A' - 1); // this would be the char that matrix can have at most.
 		
 		for (int i = 0; i < latinSquare.length; i++) {
-				if('A' <= latinSquare[i] && latinSquare[i] <= furthestChar) {
-					//its okey
-				} else {
-					return false;
-				}
+			if ('A' <= latinSquare[i] && latinSquare[i] <= furthestChar || 'a' <= latinSquare[i] && latinSquare[i] <= 'a' + (furthestChar - 'A')) {
+				// its okey
+			} else {
+				return false;
+			}
 		}
 		return true;
 	}
