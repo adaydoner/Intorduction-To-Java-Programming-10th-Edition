@@ -104,7 +104,7 @@ public class ProgrammingExercise20 {
 		} else if (isColumnHasConsecutiveFour(board, player, columnIndex)) {
 			System.out.println(player + " is won.");
 			return true;
-		} else if (isAnyDiagonalHasConsecutiveFour(board, player, columnIndex)) {
+		} else if (isThereAnyDiagonalConsecutiveFour(board, player, columnIndex)) {
 			System.out.println(player + " is won.");
 			return true;
 		}
@@ -114,12 +114,7 @@ public class ProgrammingExercise20 {
 	public static boolean isRowHasConsecutiveFour(char[][] board, char player, int columnIndex) {
 		int rowIndex = 0;
 		// this loop will give us what row user enter symbol last. so we have location.
-		for (int row = 0; row <= board.length - 2; row++) {
-			if (board[row][columnIndex] == player) {
-				rowIndex = row;
-				break;
-			}
-		}
+		rowIndex = whatRowUserPutSymbol(board, player, columnIndex, rowIndex);
 
 		int symbolCounter = 0;
 		for (int column = 1; column < board[0].length; column += 2) {
@@ -138,13 +133,7 @@ public class ProgrammingExercise20 {
 
 	private static boolean isColumnHasConsecutiveFour(char[][] board, char player, int columnIndex) {
 		int rowIndex = 0;
-		// this loop will give us what row user enter symbol last. so we have location.
-		for (int row = 0; row <= board.length - 2; row++) {
-			if (board[row][columnIndex] == player) {
-				rowIndex = row;
-				break;
-			}
-		}
+		rowIndex = whatRowUserPutSymbol(board, player, columnIndex, rowIndex);
 
 		int symbolCounter = 0;
 		for (int row = rowIndex; row <= board.length - 2; row++) {
@@ -161,65 +150,117 @@ public class ProgrammingExercise20 {
 		return false;
 	}
 
-	private static boolean isAnyDiagonalHasConsecutiveFour(char[][] board, char player, int columnIndex) {
+	private static boolean isThereAnyDiagonalConsecutiveFour(char[][] board, char player, int columnIndex) {
 		int rowIndex = 0;
-		// this loop will give us what row user enter symbol last. so we have location.
+		rowIndex = whatRowUserPutSymbol(board, player, columnIndex, rowIndex);
+		int oppositeCounter = 0;
+		int symbolCounter = 0;
+		
+		symbolCounter = checkFromCellToRightBottomDiagonal(board, player, columnIndex, rowIndex);
+		oppositeCounter = checkFromCellToLeftTopDiagonal(board, player, columnIndex, rowIndex);
+		if(symbolCounter + oppositeCounter == 5) { // five bacuse for both method it count itself
+			return true;
+		}
+		
+		symbolCounter = checkFromCellToLeftBottomDiagonal(board, player, columnIndex, rowIndex);
+		oppositeCounter = checkFromCellToRightTopDiagonal(board, player, columnIndex, rowIndex);
+		if(symbolCounter + oppositeCounter == 5) {
+			return true;
+		}
+		
+		symbolCounter = checkFromCellToRightTopDiagonal(board, player, columnIndex, rowIndex);
+		oppositeCounter = checkFromCellToLeftBottomDiagonal(board, player, columnIndex, rowIndex);
+		if(symbolCounter + oppositeCounter == 5) {
+			return true;
+		}
+		
+		symbolCounter = checkFromCellToLeftTopDiagonal(board, player, columnIndex, rowIndex);
+		oppositeCounter= checkFromCellToRightBottomDiagonal(board, player, columnIndex, rowIndex);
+		if(symbolCounter + oppositeCounter == 5) {
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static int checkFromCellToLeftTopDiagonal(char[][] board, char player, int columnIndex, int rowIndex) {
+		int[] counterValues = new int[board.length];
+		int counter = 0;
+		for (int row = rowIndex, column = columnIndex; row >= 0 && column >= 1; row--, column -= 2) {
+			if (board[row][column] == player) {
+				counter++;
+				counterValues[row] = counter;
+			} else {
+				counter = 0;
+			}
+		}
+		counter = findMax(counterValues);
+		return counter;
+	}
+
+	public static int checkFromCellToRightTopDiagonal(char[][] board, char player, int columnIndex, int rowIndex) {
+		int[] counterValues = new int[board.length];
+		int counter = 0;
+		for (int row = rowIndex, column = columnIndex; row >= 0 && column < board[0].length; row--, column += 2) {
+			if (board[row][column] == player) {
+				counter++;
+				counterValues[row] = counter;
+			} else {
+				counter = 0;
+			}
+		}
+		counter = findMax(counterValues);
+		return counter;
+	}
+
+	public static int checkFromCellToLeftBottomDiagonal(char[][] board, char player, int columnIndex, int rowIndex) {
+		int[] counterValues = new int[board.length];
+		int counter = 0;
+		for (int row = rowIndex, column = columnIndex; row <= board.length - 2 && column >= 1; row++, column -= 2) {
+			if (board[row][column] == player) {
+				counter++;
+				counterValues[row] = counter;
+			} else {
+				counter = 0;
+			}
+		}
+		counter = findMax(counterValues);
+		return counter;
+	}
+
+	public static int checkFromCellToRightBottomDiagonal(char[][] board, char player, int columnIndex, int rowIndex) {
+		int[] counterValues = new int[board.length];
+		int counter = 0;
+		for (int row = rowIndex, column = columnIndex; row <= board.length - 2 && column < board[0].length; row++, column += 2) {
+			if (board[row][column] == player) {
+				counter++;
+				counterValues[row] = counter;
+			} else {
+				counter = 0;
+			}
+		}
+		counter = findMax(counterValues);
+		return counter;
+	}
+
+	public static int findMax(int[] counterValues) {
+		int max = 0;
+		for (int i : counterValues) {
+			if(i > max) {
+				max = i;
+			}
+		}
+		return max;
+	}
+
+	public static int whatRowUserPutSymbol(char[][] board, char player, int columnIndex, int rowIndex) {
 		for (int row = 0; row <= board.length - 2; row++) {
 			if (board[row][columnIndex] == player) {
 				rowIndex = row;
 				break;
 			}
 		}
-
-		int symbolCounter = 0;
-		for (int row = rowIndex, column = columnIndex; row <= board.length - 2 && column < board[0].length; row++, column += 2) {
-			if (board[row][column] == player) {
-				symbolCounter++;
-				if (symbolCounter == 4) {
-					return true;
-				}
-			} else {
-				symbolCounter = 0;
-			}
-		}
-
-		symbolCounter = 0;
-		for (int row = rowIndex, column = columnIndex; row <= board.length - 2 && column >= 1; row++, column -= 2) {
-			if (board[row][column] == player) {
-				symbolCounter++;
-				if (symbolCounter == 4) {
-					return true;
-				}
-			} else {
-				symbolCounter = 0;
-			}
-		}
-
-		symbolCounter = 0;
-		for (int row = rowIndex, column = columnIndex; row >= 0 && column < board[0].length; row--, column += 2) {
-			if (board[row][column] == player) {
-				symbolCounter++;
-				if (symbolCounter == 4) {
-					return true;
-				}
-			} else {
-				symbolCounter = 0;
-			}
-		}
-
-		symbolCounter = 0;
-		for (int row = rowIndex, column = columnIndex; row >= 0 && column >= 1; row--, column -= 2) {
-			if (board[row][column] == player) {
-				symbolCounter++;
-				if (symbolCounter == 4) {
-					return true;
-				}
-			} else {
-				symbolCounter = 0;
-			}
-		}
-
-		return false;
+		return rowIndex;
 	}
 
 	public static boolean areSlotsFull(char[][] board) {
