@@ -25,7 +25,7 @@ public class ProgrammingExercise49 {
 				numberOfConsonants++;
 			}
 		}
-		System.out.println("The number of vowels is "  + numberOfVowels);
+		System.out.println("The number of vowels is"  + numberOfVowels);
 		System.out.println("The number of consonants is " + numberOfConsonants);
 		input.close();
 	}
