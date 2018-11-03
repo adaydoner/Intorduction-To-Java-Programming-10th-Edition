@@ -19,8 +19,7 @@ public class ProgrammingExercise49 {
 		usersString = input.nextLine();
 		usersString = usersString.toUpperCase();
 		for (int i = 0; i < usersString.length(); i++) {
-			if(usersString.charAt(i) == 'A' || usersString.charAt(i) == 'I' || usersString.charAt(i) == 'O' || usersString.charAt(i) == 'U' || usersString.charAt(i) == 'Ü' ||
-			   usersString.charAt(i) == 'E' || usersString.charAt(i) == 'İ' || usersString.charAt(i) == 'Ö') {
+			if(usersString.charAt(i) == 'A' || usersString.charAt(i) == 'I' || usersString.charAt(i) == 'O' || usersString.charAt(i) == 'U') {
 				numberOfVowels++;
 			} else {
 				numberOfConsonants++;
