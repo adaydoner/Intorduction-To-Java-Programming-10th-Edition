@@ -19,10 +19,58 @@ public class ProgrammingExercise02 {
 		Stock firstStock = new Stock("ORCL", "Oracle Corporation");
 		firstStock.setPreviousClosingPrice(34.5);
 		firstStock.setCurrentPrice(34.35);
-		
-		System.out.println(firstStock.getChangePercent());
-		
 
+		System.out.printf("%s %s %s %s%.2f", "price-change percentage is for", firstStock.getSymbol(), firstStock.getName(),"is %",firstStock.getChangePercent());
+
+	}
+
+}
+
+class Stock {
+	private String symbol;
+	private String name;
+	private double previousClosingPrice;
+	private double currentPrice;
+
+	Stock(String symbolValue, String nameValue) {
+		symbol = symbolValue;
+		name = nameValue;
+	}
+
+	public void setSymbol(String newSymbolValue) {
+		symbol = newSymbolValue;
+	}
+	public String getSymbol() {
+		return symbol;
+	}
+
+	
+	public void setName(String newNameValue) {
+		name = newNameValue;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	
+	
+	public void setCurrentPrice(double newCurrentPrice) {
+		currentPrice = newCurrentPrice;
+	}
+
+	public void setPreviousClosingPrice(double newPreviousClosingPrice) {
+		previousClosingPrice = newPreviousClosingPrice;
+	}
+
+	public double getChangePercent() {
+		if (currentPrice > previousClosingPrice) {
+			double increase = (currentPrice / previousClosingPrice) * 100;
+			return (increase / currentPrice * 100);
+		} else {
+			double decrease = previousClosingPrice - currentPrice;
+			return (decrease / previousClosingPrice * 100);
+		}
 	}
 
 }
