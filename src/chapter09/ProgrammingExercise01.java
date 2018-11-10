@@ -15,10 +15,40 @@ public class ProgrammingExercise01 {
 
 	public static void main(String[] args) {
 		// Test Rectangle Class..
-		Rectangle firstRectangle = new Rectangle(4 , 40);
+		Rectangle firstRectangle = new Rectangle(4, 40);
 		Rectangle secondRectangle = new Rectangle(3.5, 35.9);
-		
-		System.out.printf("First Rectangle's ; Width : %.2f - Height : %.2f - Area : %.2f - Perimeter : %.2f \n",firstRectangle.getWidth(), firstRectangle.getHeight(), firstRectangle.getArea() , firstRectangle.getPerimeter());
-		System.out.printf("Second Rectangle's ; Width : %.2f - Height : %.2f - Area : %.2f - Perimeter : %.2f \n",secondRectangle.getWidth(), secondRectangle.getHeight(), secondRectangle.getArea() , secondRectangle.getPerimeter());
+
+		System.out.printf("First Rectangle's ; Width : %.2f - Height : %.2f - Area : %.2f - Perimeter : %.2f \n",
+				firstRectangle.getWidth(), firstRectangle.getHeight(), firstRectangle.getArea(),
+				firstRectangle.getPerimeter());
+		System.out.printf("Second Rectangle's ; Width : %.2f - Height : %.2f - Area : %.2f - Perimeter : %.2f \n",
+				secondRectangle.getWidth(), secondRectangle.getHeight(), secondRectangle.getArea(),
+				secondRectangle.getPerimeter());
+	}
+}
+
+class Rectangle {
+	private double width = 1;
+	private double height = 1;
+
+	Rectangle(double widthValue, double heightValue) {
+		width = widthValue;
+		height = heightValue;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	double getArea() {
+		return (width * height);
+	}
+
+	double getPerimeter() {
+		return (width * 2 + height * 2);
 	}
 }
