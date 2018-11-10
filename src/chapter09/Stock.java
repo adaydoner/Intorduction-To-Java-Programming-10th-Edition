@@ -1,4 +1,4 @@
-// this class created for Chapter09.ProgrammingExercise02
+// This class created for Chapter09.ProgrammingExercise02
 package chapter09;
 
 public class Stock {

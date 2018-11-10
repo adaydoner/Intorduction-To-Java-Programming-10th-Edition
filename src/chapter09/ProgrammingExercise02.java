@@ -15,7 +15,7 @@ package chapter09;
 public class ProgrammingExercise02 {
 
 	public static void main(String[] args) {
-		// Test Stock Class..
+		// Test Stock Class
 		Stock firstStock = new Stock("ORCL", "Oracle Corporation");
 		firstStock.setPreviousClosingPrice(34.5);
 		firstStock.setCurrentPrice(34.35);
