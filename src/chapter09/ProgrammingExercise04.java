@@ -11,13 +11,17 @@ public class ProgrammingExercise04 {
 		final int ARRAY_SIZE = 50;
 		int[] randomNumbersArray = new int[ARRAY_SIZE];
 		
+		generateRandomNumbers(ARRAY_SIZE, randomNumbersArray);
+		
+		printArray(randomNumbersArray);
+	}
+
+	private static void generateRandomNumbers(int ARRAY_SIZE, int[] randomNumbersArray) {
 		Random randomNumberGenerator = new Random(1000);
 		
 		for (int i = 0; i < ARRAY_SIZE; i++) {
 			randomNumbersArray[i] = randomNumberGenerator.nextInt(100);
 		}
-		
-		printArray(randomNumbersArray);
 	}
 
 	public static void printArray(int[] randomNumbers) {
