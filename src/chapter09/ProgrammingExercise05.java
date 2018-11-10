@@ -1,5 +1,5 @@
 /*
- * (Use the GregorianCalendar class) Java API has the GregorianCalendar class in the java.util package, which you can use to obtain the year, month, and day of a date.
+ * (Use the GregorianCalendar class ) Java API has the GregorianCalendar class in the java.util package, which you can use to obtain the year, month, and day of a date.
  *  The no-arg constructor constructs an instance for the current date, and the methods 
  *  		get(GregorianCalendar.YEAR), get(GregorianCalendar.MONTH), and get(GregorianCalendar.DAY_OF_MONTH) return the year, month, and day.
  *  Write a program to perform two tasks:
