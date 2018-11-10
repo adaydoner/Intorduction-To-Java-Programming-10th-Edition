@@ -1,4 +1,4 @@
-// this class created for Chapter09.ProgrammingExercise01
+// This class created for Chapter09.ProgrammingExercise01
 package chapter09;
 
 public class Rectangle {

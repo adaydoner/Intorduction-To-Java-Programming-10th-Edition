@@ -15,7 +15,6 @@ public class ProgrammingExercise01 {
 
 	public static void main(String[] args) {
 		// Test Rectangle Class..
-		
 		Rectangle firstRectangle = new Rectangle(4 , 40);
 		Rectangle secondRectangle = new Rectangle(3.5, 35.9);
 		
