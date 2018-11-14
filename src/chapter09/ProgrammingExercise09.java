@@ -84,11 +84,10 @@ class RegularPolygon {
 	}
 
 	public double getPerimeter() {
-		return (side * n);
+		return (getSide() * getN());
 	}
 
-	// Area = n * pow(s,2) / 4 * tan(pi/n)
 	public double getArea() {
-		return (n * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / n));
+		return (getN() * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / getN()));
 	}
 }
