@@ -63,14 +63,14 @@ class QuadraticEquation {
 	}
 
 	public double getDiscriminant() {
-		return (Math.pow(b, 2) - (4 * a * c));
+		return (Math.pow(getB(), 2) - (4 * getA() * getC()));
 	}
 
 	public double getRoot1() {
-		return (-b + Math.pow(getDiscriminant(), 0.5)) / (2 * a);
+		return (-getB() + Math.pow(getDiscriminant(), 0.5)) / (2 * getA());
 	}
 
 	public double getRoot2() {
-		return (-b - Math.pow(getDiscriminant(), 0.5)) / (2 * a);
+		return (-getB() - Math.pow(getDiscriminant(), 0.5)) / (2 * getA());
 	}
 }
