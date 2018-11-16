@@ -21,7 +21,7 @@ class StackOfIntegers {
 	// An array to store integers in the stack.
 	private int[] elements;
 	// The number of integers in the stack.
-	private int size;
+	private static int size;
 
 	// Constructs an empty stack with a default capacity of 16.
 	public StackOfIntegers() {
