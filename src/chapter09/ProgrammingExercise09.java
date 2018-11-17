@@ -37,7 +37,7 @@ class RegularPolygon {
 	private double y;
 
 	RegularPolygon() {
-		this(3, 1.0, 0, 0);
+		this(3, 1.0);
 	}
 
 	RegularPolygon(int n, double side) {
@@ -84,10 +84,10 @@ class RegularPolygon {
 	}
 
 	public double getPerimeter() {
-		return (getSide() * getN());
+		return (side * n);
 	}
 
 	public double getArea() {
-		return (getN() * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / getN()));
+		return (n * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / n));
 	}
 }
