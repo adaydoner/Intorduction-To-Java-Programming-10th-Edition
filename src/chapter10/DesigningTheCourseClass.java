@@ -51,7 +51,7 @@ public class DesigningTheCourseClass {
 class Course {
 	private String courseName;
 	private String[] students;
-	private static int numberOfStudents;
+	private int numberOfStudents;
 
 	public Course(String courseName) {
 		this.courseName = courseName;
