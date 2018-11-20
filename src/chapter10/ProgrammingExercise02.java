@@ -1,4 +1,5 @@
 package chapter10;
+import Classes.BMI;
 /**
  * (The BMI class) Add the following new constructor in the BMI class:
  * Construct a BMI with the specified name, age, weight,feet, and inches
