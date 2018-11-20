@@ -1,6 +1,7 @@
 package chapter10;
 
 import java.util.Scanner;
+import Classes.MyInteger;
 
 /**
  * (Displaying the prime factors) Write a program that prompts the user to enter a positive integer and displays all its smallest factors in decreasing order. 
