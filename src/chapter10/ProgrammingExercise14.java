@@ -16,12 +16,12 @@ import Classes.MyDate;
 public class ProgrammingExercise14 {
 	public static void main(String[] args) {
 		MyDate date1 = new MyDate();
-		MyDate date2 = new MyDate(34355555133101L);
+		MyDate date2 = new MyDate(561555550000L);
 		
 		System.out.println("First date objects ; \nDay : " + date1.getDay() + "\nMonth : " + date1.getMonth() + "\nYear : " + date1.getYear());
 		System.out.println("Second date objects ; \nDay : " + date2.getDay() + "\nMonth : " + date2.getMonth() + "\nYear : " + date2.getYear());
-		date1.setDate(34355555133101L);
+		
+		date1.setDate(561555550000L);
 		System.out.println("First date objects ; \nDay : " + date1.getDay() + "\nMonth : " + date1.getMonth() + "\nYear : " + date1.getYear());
-		System.out.println("ali");
 	}
 }
