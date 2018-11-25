@@ -45,6 +45,41 @@ public class MyRectangle2D {
 	}
 	
 	/**
+	 * This method would find the bounding rectangle for given points and displays its center, width, and height.
+	 * Points should given with an multi dimensional double array that contains x and y svalues for each point
+	 * @param points
+	 * @return
+	 */
+	public static MyRectangle2D getRectangle(double[][] points){
+		double maxX = 0;
+		double maxY = 0;
+		double minX = Double.MAX_VALUE;
+		double minY = Double.MAX_VALUE;
+		for (int i = 0; i < points.length; i++) {
+			if (points[i][0] > maxX) {
+				maxX = points[i][0];
+			}
+			if (points[i][0] < minX) {
+				minX = points[i][0];
+			}
+
+			if (points[i][1] > maxY) {
+				maxY = points[i][1];
+			}
+			if (points[i][1] < minY) {
+				minY = points[i][1];
+			}
+		}
+		MyRectangle2D boundedRectangle = new MyRectangle2D();
+		boundedRectangle.setX((maxX + minX) / 2);
+		boundedRectangle.setY((maxY + minY) / 2);
+		boundedRectangle.setWidth(maxX - minX);
+		boundedRectangle.setHeight(maxY - minY);
+		
+		return boundedRectangle;
+	}
+	
+	/**
 	 * returns true if the specified point (x, y) is inside this rectangle
 	 * @param x
 	 * @param y
