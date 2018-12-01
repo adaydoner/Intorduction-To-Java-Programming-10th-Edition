@@ -1,4 +1,7 @@
 package Classes;
+
+import java.util.Arrays;
+
 /**
  * This class initialized with conditions that giving at chapter 10. exercise 23.
  * 
@@ -77,6 +80,77 @@ public class MyString2 {
 		return new MyString2("false");
 	}
 	
+	/**
+	 * returns an array of strings consisting of the substrings split by the delimiters. However, the delimiters are not returned.
+	 * @param s
+	 * @param regex
+	 * @return
+	 */
+	public static String[] split(String s, String regex){
+		int locationWriter = 0; // to write regex indexes.
+		int[][] regexLocations = new int[s.length()][2]; // to hold regex locations in specified string
+		int numberOfRegex = 0;
+		
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = i,regCounter = 0; regCounter < regex.length(); j++,regCounter++) {
+				if(s.charAt(j) == regex.charAt(regCounter)){
+					if(regCounter + 1 == regex.length()){
+						regexLocations[locationWriter][0] = i;
+						regexLocations[locationWriter][1] = i + regex.length() - 1;
+						locationWriter++;
+					}
+					continue;
+				} else {
+					break;
+				}
+			}
+		}
+		
+		for (int i = 0; i < regexLocations.length; i++) {
+			if(regexLocations[i][1] != 0){ // to avoid empty indexes in array.
+				numberOfRegex++;
+			}
+		}
+		
+		
+		String[] returnVal = new String[numberOfRegex + 1];
+		for (int i = 0; i < returnVal.length; i++) {
+			returnVal[i] = "";
+		}
+		
+		
+		writeStringsExceptRegex(s,returnVal,regexLocations,numberOfRegex);
+		return returnVal;
+	}
+	
+	private static void writeStringsExceptRegex(String s, String[] returnVal, int[][] regexLocations,int numberOfRegex) {
+		for (int i = 0; i <= numberOfRegex; i++) {
+			if (i == 0) {
+				for (int j = 0; j < regexLocations[0][0]; j++) {
+					returnVal[i] += s.charAt(j);
+				}
+			} else if (i == numberOfRegex) {
+				for (int j = regexLocations[i- 1][1] + 1; j < s.length(); j++) {
+					returnVal[i] += s.charAt(j);
+				}
+			} else {
+				for (int j = regexLocations[i - 1][1] + 1; j < regexLocations[i][0]; j++) {
+					returnVal[i] += s.charAt(j);
+				}
+			}
+		}
+	}
+
+	private static int count(int[][] regexLocations) {
+		int counter = 0;
+		for (int i = 0; i < regexLocations.length; i++) {
+			if(regexLocations[i][1] != 0){ // to avoid empty indexes in array.
+				counter++;
+			}
+		}
+		return counter;
+	}
+
 	/*
 	 * getters setters
 	 */
