@@ -26,6 +26,9 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	public double getDiameter(){
 		return 2 * radius;
 	}
+	public void printCircle(){
+		System.out.println("This circle created at : " + this.getDateCreated() + " and its radius is : " + radius );
+	}
 	
 	/**
 	 * getters and setters
