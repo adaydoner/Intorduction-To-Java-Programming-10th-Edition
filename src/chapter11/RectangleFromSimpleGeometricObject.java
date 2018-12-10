@@ -14,10 +14,9 @@ public class RectangleFromSimpleGeometricObject extends SimpleGeometricObject{
 	}
 	
 	RectangleFromSimpleGeometricObject(double width, double height, String color, boolean filled){
+		super(color, filled);
 		this.width = width;
 		this.height = height;
-		setColor(color);
-		setFilled(filled);
 	}
 	
 	public double getArea(){
@@ -26,6 +25,10 @@ public class RectangleFromSimpleGeometricObject extends SimpleGeometricObject{
 	
 	public double getPerimeter(){
 		return 2 * (width + height);
+	}
+	
+	public String toString(){
+		return super.toString() + "\nrectangle's toString method.";
 	}
 	
 	/*

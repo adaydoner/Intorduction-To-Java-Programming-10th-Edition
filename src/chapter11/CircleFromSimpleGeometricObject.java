@@ -3,6 +3,7 @@ import chapter11.SimpleGeometricObject;
 
 public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	private double radius;
+	private static final String author = "Dogan";
 	
 	CircleFromSimpleGeometricObject(double radius){
 		this(radius,"white");
@@ -13,9 +14,8 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	}
 	
 	CircleFromSimpleGeometricObject(double radius, String color, boolean filled){
+		super(color, filled);
 		this.radius = radius;
-		setColor(color);
-		setFilled(filled);
 	}
 	public double getArea(){
 		return Math.PI * radius * radius;
@@ -28,6 +28,16 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	}
 	public void printCircle(){
 		System.out.println("This circle created at : " + this.getDateCreated() + " and its radius is : " + radius );
+	}
+	
+	//test override static method
+	public static String getAuthor(){
+		return author;
+	}
+	
+	//overriding
+	public String toString(){
+		return (super.toString() + "\nradius : " + radius); 
 	}
 	
 	/**

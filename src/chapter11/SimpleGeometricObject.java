@@ -6,6 +6,7 @@ public class SimpleGeometricObject {
 	private String color;
 	private boolean filled;
 	Date dateCreated;
+	private static final String author = "Ali Dogan";
 	
 	SimpleGeometricObject(){
 		this("white",false);
@@ -17,6 +18,10 @@ public class SimpleGeometricObject {
 	}
 	public String toString(){
 		return ("Created on : " + dateCreated.toString() + "\nColor : " + color + "\nFilled : " + filled); 
+	}
+	
+	public static String getAuthor(){
+		return author;
 	}
 	
 	/**

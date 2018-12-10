@@ -1,0 +1,30 @@
+1 - >	You can extend classes with another class using "extends" keyword
+
+2 - >	If a class has "is a " releationship with another class , you should extend with that on the other hand 
+		if class hasn't got a "is a" relationship , you shouldnt use this extend option just for using a few variables or methods.
+
+3 - >	When you extend a class , you can use your super class methods and variables.
+
+4 - >	You cant access private data fields but you can do it with accessors/mutators if defined in super class.
+
+5 - >	You cant do multiple inheritence.
+
+*Using the super Keyword
+6 - >	You can access your super class constructors and methods from your subclass with "super" keyword.
+		if you'd use super class's constructor , you need to write it at the first line of your subclass's constructor.
+		
+7 - >	Even if you dont call your super class constructor from your subclass's constructor , it automatically call your super class's no-arg constructor at first. 
+
+*Constructor Chaining		
+8 - >	Since its automatically call super class's no-arg constructor, chain work like : 
+		firstly created extend class , lets say your super class has another extend class , 
+		that another extend class's instance created first
+		then your super class's instance
+		then your class's instance.
+		
+9 - >	if your extend class doesn't have a no-arg constructor , that would be cause an error.
+
+10 ->	To override a method, the method must be defined in the subclass using the same signature and the same return type as in its superclass
+		An instance method can be overridden only if it is accessible Thus a private method cannot be overridden, because it is not accessible outside its own class.
+		
+11 ->	a static method can be inherited. However, a static method cannot be overridden.
