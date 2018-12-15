@@ -1,5 +1,5 @@
-package chapter11;
-import chapter11.SimpleGeometricObject;
+package chapter11.samples;
+import chapter11.samples.SimpleGeometricObject;
 
 public class TestGeometricObjects {
 
@@ -26,6 +26,10 @@ public class TestGeometricObjects {
 		System.out.println(SimpleGeometricObject.getAuthor());
 		
 		
+		System.out.println("\n");
+		
+		StringBuilder a = new StringBuilder();
+		System.out.println(a);
 		
 		
 	}

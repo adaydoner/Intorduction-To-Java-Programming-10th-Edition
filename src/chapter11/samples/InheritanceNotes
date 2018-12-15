@@ -22,7 +22,7 @@
 		then your super class's instance
 		then your class's instance.
 		
-9 - >	if your extend class doesn't have a no-arg constructor , that would be cause an error.
+9 - >	if your extend class doesn't have a no-arg constructor but another constructor that get parameter , that would be cause an error.
 
 10 ->	To override a method, the method must be defined in the subclass using the same signature and the same return type as in its superclass
 		An instance method can be overridden only if it is accessible Thus a private method cannot be overridden, because it is not accessible outside its own class.

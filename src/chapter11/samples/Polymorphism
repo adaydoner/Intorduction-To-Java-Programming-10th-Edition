@@ -1,0 +1,29 @@
+1	->	Polymorphism means that a variable of a supertype can refer to a subtype object
+
+2	->	every instance of a subclass is also an instance of its superclass, but not vice versa.
+
+3	->	you can always pass an instance of a subclass to a parameter of its superclass type.
+
+
+DYNAMIC BINDING
+A method can be implemented in several classes along the inheritance chain. The JVM decides which method is invoked at runtime.
+
+	Object o = new GeometricObject();
+	System.out.println(o.toString());
+
+which toString method would invoked ? , object has toString method GeometricObject has it too.
+
+ declared type		:		o’s declared type is Object.
+ actual type		:		o’s actual type is GeometricObject.
+ 
+ Which toString() method is invoked by o is determined by o’s actual type. This is known as dynamic binding.
+ 
+ Dynamic binding works as follows:
+ Suppose an object o is an instance of classes C1, C2, . . . , Cn-1, and Cn,
+ JVM searches for the implementation of the method p in C1, C2, . . . , Cn-1, and Cn, in this order, until it is found.
+ 
+ 
+ 
+ If your progrm would invoked extend class's constructor and some how extend class's no-arg consturctor has an overrided method, jvm would called that method considering dynamic binding workflows
+ 
+ 

@@ -1,5 +1,5 @@
-package chapter11;
-import chapter11.SimpleGeometricObject;
+package chapter11.samples;
+import chapter11.samples.SimpleGeometricObject;
 
 public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	private double radius;
@@ -35,7 +35,7 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 		return author;
 	}
 	
-	//overriding
+	@Override
 	public String toString(){
 		return (super.toString() + "\nradius : " + radius); 
 	}

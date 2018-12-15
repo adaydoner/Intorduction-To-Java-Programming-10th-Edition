@@ -1,4 +1,4 @@
-package chapter11;
+package chapter11.samples;
 
 import java.util.Date;
 
