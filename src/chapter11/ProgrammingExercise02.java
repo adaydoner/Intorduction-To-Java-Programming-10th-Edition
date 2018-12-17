@@ -18,18 +18,12 @@ import Classes.*;
 public class ProgrammingExercise02 {
 
 	public static void main(String[] args) {
-		Person person = new Person();
-		Student student = new Student();
-		Employee employee = new Employee();
-		Faculty faculty = new Faculty();
-		Staff staff = new Staff();
 		
-		
-		System.out.println("invoking Person's toString method : " + person.toString());
-		System.out.println("invoking Student's toString method : " + student.toString());
-		System.out.println("invoking Employee's toString method : " + employee.toString());
-		System.out.println("invoking Faculty's toString method : " + faculty.toString());
-		System.out.println("invoking Staff's toString method : " + staff.toString());
+		System.out.printf("%-40s%s%s\n","invoking Person's toString method ",": ",new Person().toString());
+		System.out.printf("%-40s%s%s\n","invoking Student's toString method ",": ",new Student().toString());
+		System.out.printf("%-40s%s%s\n","invoking Employee's toString method ",": ",new Employee().toString());
+		System.out.printf("%-40s%s%s\n","invoking Faculty's toString method ",": ",new Faculty().toString());
+		System.out.printf("%-40s%s%s\n","invoking Staff's toString method ",": ",new Staff().toString());
 		
 	}
 }
