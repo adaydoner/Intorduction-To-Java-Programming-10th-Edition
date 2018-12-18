@@ -39,7 +39,7 @@ public class ProgrammingExercise09 {
 		printArray(mathStudents);
 	}
 	private static void printArray(String[] students) {
-		if (students == null) {
+		if (students.length == 0) {
 			System.out.println("There is no student");
 		} else {
 			for (int i = 0; i < students.length; i++) {
