@@ -5,15 +5,15 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
 	private double radius;
 	private static final String author = "Dogan";
 	
-	CircleFromSimpleGeometricObject(double radius){
+	public CircleFromSimpleGeometricObject(double radius){
 		this(radius,"white");
 	}
 	
-	CircleFromSimpleGeometricObject(double radius, String color){
+	public CircleFromSimpleGeometricObject(double radius, String color){
 		this(radius,color,false);
 	}
 	
-	CircleFromSimpleGeometricObject(double radius, String color, boolean filled){
+	public CircleFromSimpleGeometricObject(double radius, String color, boolean filled){
 		super(color, filled);
 		this.radius = radius;
 	}
