@@ -9,7 +9,7 @@ public class Triangle extends GeometricObject {
 	private double side2;
 	private double side3;
 	
-	public Triangle() {
+	public Triangle() throws IllegalTriangleException {
 		this(1,1,1);
 	}
 	
@@ -23,15 +23,13 @@ public class Triangle extends GeometricObject {
 	 * @param side2
 	 * @param side3
 	 */
-	public Triangle (double side1, double side2, double side3) {
+	public Triangle (double side1, double side2, double side3) throws IllegalTriangleException {
 		if(isTriangle(side1,side2,side3)){
 			this.side1 = side1;
 			this.side2 = side2;
 			this.side3 = side3;
 		} else {
-			this.side1 = 1;
-			this.side2 = 1;
-			this.side3 = 1;
+			throw new IllegalTriangleException();
 		}
 	}
 	
