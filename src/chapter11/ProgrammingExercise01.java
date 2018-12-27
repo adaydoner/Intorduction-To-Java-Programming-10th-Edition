@@ -1,6 +1,7 @@
 package chapter11;
 import java.util.Scanner;
 import Classes.GeometricObject;
+import Classes.IllegalTriangleException;
 import Classes.Triangle;
 /**
  * (The Triangle class) Design a class named Triangle that extends GeometricObject. The class contains:
@@ -23,7 +24,7 @@ import Classes.Triangle;
  */
 
 public class ProgrammingExercise01 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IllegalTriangleException {
 		Scanner input = new Scanner(System.in);
 		double[] triangleSideLengths = new double[3];
 		String color;
