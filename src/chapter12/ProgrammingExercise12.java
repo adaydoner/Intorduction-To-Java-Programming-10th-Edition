@@ -17,23 +17,21 @@ import java.util.Scanner;
  */
 public class ProgrammingExercise12 {
 	public static void main(String[] args) {
+		Scanner input = null;
+		StringBuilder buffer = new StringBuilder();
+		File filename = new File(args[0]);
+		
 		if (args.length != 1) {
-			System.out.println("Invalid argument.");
-			System.out.println("Usage: java Chapter_10.Exercise_12 Test.java");
+			System.out.println("Usage: java Chapter_10.Exercise_12 C:\\Users\\Ali\\Desktop\\javaRem.txt");
 			System.exit(1);
 		}
 		
-		File filename = new File(args[0]);
 		if (!filename.exists()) {
 			System.out.println(filename + " does not exist.");
 			System.exit(2);
 		}
-		
-		
-		StringBuilder buffer = new StringBuilder();
-		
 		try {
-			Scanner input = new Scanner(filename);
+			input = new Scanner(filename);
 			while (input.hasNext()) {
 				String s = input.nextLine();
 				if (s.contains("{")) {
@@ -44,6 +42,8 @@ public class ProgrammingExercise12 {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		} finally {
+			input.close();
 		}
 
 		try {
@@ -54,6 +54,8 @@ public class ProgrammingExercise12 {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
+		
 		System.out.println(buffer);
 	}
 }
