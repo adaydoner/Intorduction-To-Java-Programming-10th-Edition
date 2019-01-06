@@ -22,7 +22,6 @@ public class ProgrammingExercise35 {
 			int guessedCharWriter = 0;
 			int wrongAnswer = 0;
 			boolean gameResult = false;
-			System.out.println(randomWord);
 			while (wrongAnswer <= 6) {
 				System.out.print("(Guess) Enter a letter in word " + printCodedWord(randomWord, guessedChars) + " > ");
 				guessedChars[guessedCharWriter] = input.nextLine().charAt(0);
@@ -31,7 +30,7 @@ public class ProgrammingExercise35 {
 					System.out.printf("%5s%c%s", " ", guessedChars[guessedCharWriter], " is not in the word\n");
 				}
 				if (guessedCharContainNextGuess(guessedChars, guessedChars[guessedCharWriter])) { // if guessed character is already written,wrong answer counter would increase.
-					System.out.printf("%5s%c%s", " ", guessedChars[guessedCharWriter], " is already in the word\n");
+					System.out.printf("%5s%c%s", " ", guessedChars[guessedCharWriter], " already tried.\n");
 					wrongAnswer++;
 				}
 				if (isWordFounded(randomWord, guessedChars)) {
