@@ -21,6 +21,7 @@ public class ProgrammingExercise18 {
 	public static void main(String[] args) {
 		if(args[0] == ""){
 			System.out.println("Invalid input. Usage  java chapter12.ProgrammingExercise18 srcMainFile");
+			System.exit(0);
 		}
 		File srcMainFile = new File(args[0]);
 
@@ -51,10 +52,11 @@ public class ProgrammingExercise18 {
 				updateFile(javaFiles.get(i)[j],chapters[i].getAbsolutePath(),chapterNo);
 			}
 		}
-		System.out.println("over.");
+		System.out.println("packages definitions added.");
 	}
 
 	private static void updateFile(File file, String tempFilePath, String chapterNo) {
+		boolean flag = false;
 		Scanner input = null;
 		PrintStream output = null;
 		int lineCounter = 0;
@@ -66,8 +68,8 @@ public class ProgrammingExercise18 {
 			while(input.hasNextLine()){
 				String s = input.nextLine();
 				if(s.contains(addedString.substring(8, 17)) && lineCounter < 3){
-					tempFile.delete();
-					return;
+					flag = true;
+					break;
 				}
 				if(lineCounter == 0){
 					output.println(addedString + System.lineSeparator() + s);
@@ -83,8 +85,12 @@ public class ProgrammingExercise18 {
 			input.close();
 			output.close();
 		}
-		String oldFileAbsolutePath = file.getAbsolutePath();
-		file.delete();
-		tempFile.renameTo(new File(oldFileAbsolutePath));
+		if(flag){
+			tempFile.delete();
+		} else {
+			String oldFileAbsolutePath = file.getAbsolutePath();
+			file.delete();
+			tempFile.renameTo(new File(oldFileAbsolutePath));
+		}
 	}
 }
